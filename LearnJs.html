@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <li>1</li> -->
+    <ol>
+        <li>
+            asd
+        </li>
+        <li>aa</li>
+    </ol>
+    <script>
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        var get = document.querySelectorAll('li')
+        console.log(get);
+
+        var bodyEle = document.body;
+        console.log(bodyEle);
+    </script>
+
+
+    <button class="asd01">显示时间</button>
+    <div>Time</div>
+    <p>asd</p>
+    <!-- 点击显示时间按钮 使 Time 显示时间--改变元素内容 -->
+    <script>
+        var btn = document.querySelector('.asd01');
+        var div = document.querySelector('div');
+        btn.onclick = function () {
+            // div.innerText='2022-2-20';
+            div.innerText = getDate();
+        }
+        function getDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month =date.getMonth()+1;
+            var dates= date.getDate();
+            var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+            var day =date.getDay();
+            return year + '年' +month +'月'+dates+'日'+arr[day];
+        }
+        var p=document.querySelector('p');
+        p.innerText=getDate();
+
+    </script>
+
+
+</body>
+
+</html>
