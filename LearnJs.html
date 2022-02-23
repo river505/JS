@@ -6,53 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div:nth-child(4n-3) {
+            background-color: aquamarine;
+        }
+
+        div:nth-child(4n-2) {
+            background-color: palegoldenrod;
+        }
+
+        div:nth-child(4n-1) {
+            background-color: palevioletred;
+        }
+
+        div:nth-child(4n) {
+            background-color: tomato;
+        }
+
+        img{
+            width: 500px;
+            height: 350px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- <li>1</li> -->
-    <ol>
-        <li>
-            asd
-        </li>
-        <li>aa</li>
-    </ol>
-    <script>
-        var lis = document.getElementsByTagName('li');
-        console.log(lis);
-        var get = document.querySelectorAll('li')
-        console.log(get);
+    <div class="before">
+        <!-- <li>1</li> -->
+        <ol>
+            <li>
+                asd
+            </li>
+            <li>aa</li>
+        </ol>
+        <script>
+            var lis = document.getElementsByTagName('li');
+            console.log(lis);
+            var get = document.querySelectorAll('li')
+            console.log(get);
 
-        var bodyEle = document.body;
-        console.log(bodyEle);
-    </script>
-
-
-    <button class="asd01">显示时间</button>
-    <div>Time</div>
-    <p>asd</p>
-    <!-- 点击显示时间按钮 使 Time 显示时间--改变元素内容 -->
-    <script>
-        var btn = document.querySelector('.asd01');
-        var div = document.querySelector('div');
-        btn.onclick = function () {
-            // div.innerText='2022-2-20';
-            div.innerText = getDate();
-        }
-        function getDate(){
-            var date = new Date();
-            var year = date.getFullYear();
-            var month =date.getMonth()+1;
-            var dates= date.getDate();
-            var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
-            var day =date.getDay();
-            return year + '年' +month +'月'+dates+'日'+arr[day];
-        }
-        var p=document.querySelector('p');
-        p.innerText=getDate();
-
-    </script>
+            var bodyEle = document.body;
+            console.log(bodyEle);
+        </script>
 
 
+        <button class="asd01">显示时间</button>
+        <div>Time</div>
+        <p>asd</p>
+        <!-- 点击显示时间按钮 使 Time 显示时间--改变元素内容 -->
+        <script>
+            var btn = document.querySelector('.asd01');
+            var div = document.querySelector('div');
+            btn.onclick = function () {
+                // div.innerText='2022-2-20';
+                div.innerText = getDate();
+            }
+
+            function getDate() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+                var day = date.getDay();
+                return year + '年' + month + '月' + dates + '日' + arr[day];
+            }
+            var p = document.querySelector('p');
+            p.innerText = getDate();
+        </script>
+
+    </div>
+<!-- 修改src -->
+    <div class="Feb24th">
+        <button id="qd" title="青岛信号山公园" >青岛信号山公园</button>
+        <button id="rz" title="日照森林公园">日照森林公园</button>
+        <br>
+        <img id="asdfgfd"src="./img/003.JPG" title="青岛信号山公园" alt="">
+
+        <script>
+            //修改src
+            var qd = document.getElementById('qd');
+            var rz = document.getElementById('rz');
+            var img = document.getElementById('asdfgfd');//如果用tagname返回的是伪数组
+            rz.onclick = function() {
+                img.src='./img/025.JPG';
+                img.title='日照森林公园';
+            }
+            
+            qd.onclick = function() {
+                img.src='./img/003.JPG';
+                img.title='青岛信号山公园';
+            }
+
+
+        </script>
+
+        
+ <!-- 不同时间不同图片 -->
+        
+
+        
+
+    </div>
 </body>
 
 </html>
